@@ -1,0 +1,112 @@
+.container {
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: 1rem;
+  padding: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.header h1 {
+  color: var(--text-main);
+  font-size: 1.8rem;
+}
+
+.inviteBtn {
+  background: var(--accent-primary);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.2s;
+}
+
+.inviteBtn:hover { background: var(--accent-secondary); }
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 3rem;
+}
+
+.table th {
+  text-align: left;
+  padding: 1rem;
+  border-bottom: 1px solid var(--border-light);
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+}
+
+.table td {
+  padding: 1rem;
+  border-bottom: 1px solid var(--border-light);
+  color: var(--text-main);
+}
+
+.revokeBtn {
+  background: rgba(239, 68, 68, 0.1);
+  color: #ef4444;
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  padding: 0.4rem 0.8rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+
+.revokeBtn:hover { background: #ef4444; color: white; }
+
+/* Modal Styles */
+.modalOverlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal {
+  background: var(--bg-main);
+  padding: 2rem;
+  border-radius: 1rem;
+  width: 100%;
+  max-width: 400px;
+  border: 1px solid var(--border-light);
+}
+
+.modal h2 {
+  margin-bottom: 1.5rem;
+  color: var(--text-main);
+}
+
+.formGroup { margin-bottom: 1rem; }
+.formGroup label { display: block; margin-bottom: 0.5rem; color: var(--text-main); font-size: 0.9rem; }
+.formGroup input {
+  width: 100%; padding: 0.75rem; border-radius: 0.5rem;
+  border: 1px solid var(--border-light); background: var(--input-bg); color: var(--text-main);
+}
+
+.modalActions { display: flex; gap: 1rem; margin-top: 2rem; }
+.cancelBtn {
+  flex: 1; padding: 0.75rem; border: 1px solid var(--border-light);
+  background: transparent; color: var(--text-main); border-radius: 0.5rem; cursor: pointer;
+}
+.submitBtn {
+  flex: 1; padding: 0.75rem; background: var(--accent-primary);
+  color: white; border: none; border-radius: 0.5rem; font-weight: bold; cursor: pointer;
+}

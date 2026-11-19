@@ -1,0 +1,24 @@
+.container {
+  width: 100%;
+  max-width: 450px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  padding: 3rem 2.5rem;
+  border-radius: 1.5rem;
+  text-align: center;
+}
+
+.container h2 { font-size: 1.8rem; margin-bottom: 1rem; color: var(--text-main); }
+.container p { color: var(--text-muted); margin-bottom: 2rem; }
+
+.formGroup { margin-bottom: 1.5rem; text-align: left; }
+.formGroup label { display: block; margin-bottom: 0.5rem; color: var(--text-main); font-size: 0.9rem; }
+.formGroup input {
+  width: 100%; padding: 0.875rem; border-radius: 0.75rem;
+  border: 1px solid var(--border-light); background: var(--input-bg); color: var(--text-main);
+}
+
+.submitBtn {
+  width: 100%; padding: 1rem; background: var(--accent-primary);
+  color: white; border: none; border-radius: 0.75rem; font-weight: bold; cursor: pointer;
+}

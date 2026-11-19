@@ -1,0 +1,105 @@
+.layout {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+  background-color: var(--bg-dark);
+}
+
+/* توهج الخلفية العفني */
+.layout::before {
+  content: '';
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(6, 182, 212, 0.15) 0%, rgba(15, 23, 42, 0) 70%);
+  top: -100px;
+  left: -100px;
+  z-index: 0;
+}
+
+.layout::after {
+  content: '';
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(13, 148, 136, 0.15) 0%, rgba(15, 23, 42, 0) 70%);
+  bottom: -100px;
+  right: -100px;
+  z-index: 0;
+}
+
+.formSide {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem;
+  position: relative;
+  z-index: 1;
+}
+
+.brandSide {
+  flex: 1.2;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 5rem;
+  position: relative;
+  z-index: 1;
+  border-left: 1px solid var(--border-light);
+  background: linear-gradient(135deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0) 100%);
+}
+
+.brandLogo {
+  font-size: 3rem;
+  font-weight: 800;
+  letter-spacing: -1px;
+  background: linear-gradient(to right, #22d3ee, #14b8a6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 1.5rem;
+}
+
+.brandText {
+  font-size: 1.75rem;
+  line-height: 1.4;
+  color: var(--text-main);
+  font-weight: 600;
+  max-width: 90%;
+}
+
+.brandSubText {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  margin-top: 1rem;
+  max-width: 80%;
+  line-height: 1.6;
+}
+
+@media (max-width: 900px) {
+  .brandSide { display: none; }
+}
+.themeToggleBtn {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  background: transparent; /* بدون خلفية */
+  border: none;            /* بدون حدود */
+  color: var(--text-muted); /* لون هادئ */
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem;
+  border-radius: 50%;
+  z-index: 100;
+  transition: all 0.3s ease;
+}
+
+.themeToggleBtn:hover {
+  background: rgba(255, 255, 255, 0.1); /* لمسة خفيفة عند المرور */
+  color: var(--accent-primary); /* يتلون سماوي */
+  transform: rotate(15deg); /* حركة خفيفة ولطيفة */
+}

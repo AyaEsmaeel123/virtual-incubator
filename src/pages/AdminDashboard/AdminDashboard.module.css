@@ -1,0 +1,38 @@
+.formWrapper {
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: 1rem;
+  padding: 2rem;
+  max-width: 600px;
+}
+
+.formGroup { 
+  margin-bottom: 1.5rem; 
+}
+
+.formGroup label { 
+  display: block; 
+  margin-bottom: 0.5rem; 
+  font-size: 0.9rem; 
+  color: var(--text-muted); 
+}
+
+.formGroup input, 
+.formGroup select { 
+  width: 100%; 
+  padding: 0.75rem; 
+  border-radius: 0.5rem; 
+  background: var(--input-bg);      /* <-- هنا التعديل الأول */
+  border: 1px solid var(--border-light); 
+  color: var(--text-main);          /* <-- هنا التعديل الثاني */
+  outline: none;
+  transition: all 0.3s ease;
+} 
+
+/* إضافة تأثير عند الضغط على الحقل ليكون متناسقاً مع باقي المنصة */
+.formGroup input:focus, 
+.formGroup select:focus { 
+  border-color: var(--accent-primary); 
+  box-shadow: 0 0 0 3px rgba(6, 182, 212, 0.15); 
+  background: var(--bg-main); 
+}

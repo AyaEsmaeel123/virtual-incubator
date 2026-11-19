@@ -1,0 +1,101 @@
+.pageHeader {
+  margin-bottom: 2rem;
+}
+.pageHeader h1 {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-main);
+}
+.pageHeader p {
+  color: var(--text-muted);
+}
+
+.companyCard {
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: 1.5rem;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  position: relative;
+  overflow: hidden;
+}
+
+.companyCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: var(--accent-primary);
+}
+
+.companyInfo h2 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-main);
+}
+
+.statusBadge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 2rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+.metricsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.metric {
+  background: rgba(150, 150, 150, 0.1); /* لون رمادي شفاف بيشتغل في الوضعين */
+  padding: 1rem;
+  border-radius: 0.75rem;
+  border: 1px solid var(--border-light);
+}
+
+.metricLabel {
+  font-size: 0.8rem;
+  color: var(--text-muted); /* لون رمادي مقروء */
+  margin-bottom: 0.5rem;
+}
+
+.metricValue {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--accent-primary); /* اللون العثماني */
+}
+
+.pendingAlert {
+  background: rgba(234, 179, 8, 0.1); /* أصفر شفاف */
+  border: 1px solid rgba(234, 179, 8, 0.3);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.pendingAlert span {
+  font-size: 1.5rem;
+}
+
+.pendingAlert p {
+  font-size: 0.95rem;
+  color: #92400e; /* لون بني غامق مقروء جداً في الوضع النهاري */
+  line-height: 1.6;
+  font-weight: 500;
+}
+
+/* في الوضع الليلي بنغير لون النص للأصفر الفاتح عشان يبان */
+[data-theme="dark"] .pendingAlert p {
+  color: #fef08a;
+}

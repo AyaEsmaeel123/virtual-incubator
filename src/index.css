@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  /* الوضع الفاتح (Light Mode) - الافتراضي */
+  --bg-main: #f8fafc;
+  --bg-card: rgba(255, 255, 255, 0.7);
+  --border-light: #cbd5e1;
+  --text-main: #0f172a;
+  --text-muted: #64748b;
+  --accent-primary: #06b6d4;
+  --accent-secondary: #0d9488;
+  --input-bg: #ffffff;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="dark"] {
+  /* الوضع الغامق (Dark Mode) */
+  --bg-main: #0f172a;
+  --bg-card: rgba(30, 41, 59, 0.6);
+  --border-light: rgba(255, 255, 255, 0.1);
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --accent-primary: #06b6d4;
+  --accent-secondary: #0d9488;
+  --input-bg: rgba(15, 23, 42, 0.6);
+  --shadow-color: rgba(0, 0, 0, 0.5);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Outfit', sans-serif;
+  transition: background-color 0.3s ease, border-color 0.3s ease; /* حركة ناعمة عند التغيير */
+}
+
+body {
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  direction: ltr;
+  text-align: left;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+::placeholder {
+  color: var(--text-muted);
+  opacity: 0.7; /* يعطيه شفافية بسيطة عشان يبان إنه نص استرشادي مش بيانات حقيقية */
+}
+input, select, textarea {
+  color: var(--text-main);
+}

@@ -1,0 +1,218 @@
+/* الأساسيات والوضع النهاري */
+.pageWrapper { min-height: 100vh; background-color: var(--bg-main); color: var(--text-main); display: flex; flex-direction: column; overflow-x: hidden; }
+.navbar { display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 5%; background: var(--bg-main); border-bottom: 1px solid var(--border-light); position: sticky; top: 0; z-index: 100; backdrop-filter: blur(10px); }
+.logo { font-size: 2rem; font-weight: 800; color: var(--accent-primary); }
+.navActions { display: flex; gap: 1rem; align-items: center; }
+.iconBtn { background: transparent; border: none; color: var(--text-main); cursor: pointer; display: flex; align-items: center; gap: 5px;}
+.btnGhost { background: transparent; color: var(--text-main); border: none; font-weight: 600; cursor: pointer; }
+.btnPrimary { background: var(--accent-primary); color: white; border: none; padding: 0.6rem 1.5rem; border-radius: 0.5rem; font-weight: 600; cursor: pointer; transition: all 0.2s; }
+.btnPrimary:hover { background: var(--accent-secondary); transform: translateY(-2px); box-shadow: 0 5px 15px rgba(6,182,212,0.3); }
+
+/* Hero */
+.hero { position: relative; height: 85vh; display: flex; align-items: center; justify-content: flex-start; overflow: hidden; }
+.heroBg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-size: cover; background-position: center; opacity: 0; transition: opacity 1s ease-in-out; z-index: 0; }
+.activeBg { opacity: 1; }
+.heroOverlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(90deg, rgba(15,23,42,0.85) 0%, rgba(15,23,42,0.4) 50%, rgba(15,23,42,0) 100%); z-index: 1; }
+.heroContent { position: relative; z-index: 2; width: 100%; max-width: 1200px; padding: 0 5%; margin: 0 auto; }
+.heroText { max-width: 550px; }
+.heroText h1 { font-size: 3.5rem; font-weight: 900; line-height: 1.1; margin-bottom: 1rem; color: white; text-transform: uppercase; text-shadow: 0 4px 10px rgba(0,0,0,0.5); }
+.heroText p { font-size: 1.2rem; color: #e2e8f0; margin-bottom: 2rem; text-shadow: 0 2px 5px rgba(0,0,0,0.5); }
+.badge { display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(6, 182, 212, 0.2); color: #22d3ee; padding: 0.4rem 0.8rem; border-radius: 2rem; font-size: 0.85rem; font-weight: 600; margin-bottom: 1rem; backdrop-filter: blur(4px); }
+.btnLarge { display: inline-flex; align-items: center; gap: 0.5rem; background: var(--accent-primary); color: white; padding: 0.8rem 1.8rem; border: none; border-radius: 0.5rem; font-size: 1.1rem; font-weight: 700; cursor: pointer; box-shadow: 0 10px 20px rgba(6, 182, 212, 0.3); transition: all 0.3s; }
+.btnLarge:hover { transform: translateY(-3px); box-shadow: 0 15px 25px rgba(6, 182, 212, 0.5); }
+
+/* Success Stories */
+.successStories { padding: 5rem 5%; text-align: center; background: var(--bg-main); overflow: hidden; }
+.sectionTitle { font-size: 2.5rem; color: var(--text-main); font-weight: 800; margin-bottom: 3rem; }
+.swiperWrapper { display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; max-width: 1200px; margin: 0 auto; }
+.storyCard { 
+  background: var(--bg-card); border: 1px solid var(--border-light); border-radius: 1.5rem; padding: 2.5rem 1.5rem; width: 280px;
+  transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275); opacity: 0; transform: scale(0.8) translateY(40px) rotate(3deg);
+}
+.storyCard.showCard { opacity: 1; transform: scale(1) translateY(0) rotate(0deg); }
+.storyCard:hover { transform: scale(1.05); border-color: var(--accent-primary); }
+.storyIcon { width: 60px; height: 60px; border-radius: 1rem; background: rgba(6, 182, 212, 0.1); color: var(--accent-primary); display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; }
+.storyCard h3 { font-size: 1.4rem; margin-bottom: 0.8rem; color: var(--text-main); }
+.storyCard p { color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; }
+
+/* Statistics */
+.statsSection { padding: 3rem 5%; background: var(--bg-main); }
+.statsGrid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; max-width: 1200px; margin: 0 auto; text-align: center; }
+.statItem { background: var(--bg-card); border: 1px solid var(--border-light); border-radius: 1rem; padding: 2rem 1rem; }
+.statItem h3 { font-size: 2.5rem; font-weight: 900; color: var(--accent-primary); margin-bottom: 0.5rem; }
+.statItem p { color: var(--text-main); font-weight: 600; font-size: 1rem; }
+
+/* 3D Cubes */
+.cubesSection { padding: 6rem 5%; text-align: center; background: var(--bg-main); }
+.cubesGrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; max-width: 1000px; margin: 0 auto; }
+.flipbox { width: 100%; height: 300px; perspective: 1000px; cursor: pointer; }
+.flipboxInner { position: relative; width: 100%; height: 100%; text-align: center; transition: transform 0.6s; transform-style: preserve-3d; }
+.flipbox:hover .flipboxInner { transform: rotateY(180deg); }
+.flipboxFace { position: absolute; width: 100%; height: 100%; backface-visibility: hidden; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 2rem; border-radius: 1rem; }
+.flipboxFront { background: var(--bg-card); color: var(--text-main); border: 1px solid var(--border-light); }
+.flipboxFront h3 { font-size: 1.5rem; }
+.flipboxBack { background: var(--accent-primary); color: white; transform: rotateY(180deg); }
+.flipboxBack h4 { font-size: 1.3rem; margin-bottom: 1rem; }
+.flipboxBack p { font-size: 0.95rem; line-height: 1.5; }
+
+/* Why VIS */
+.interactiveSection { padding: 5rem 5%; background: var(--bg-main); }
+.interactiveContainer { display: flex; gap: 3rem; max-width: 1200px; margin: 0 auto; align-items: center; }
+.interactiveList { flex: 1; }
+.bulletItem { padding: 1.2rem; border-left: 4px solid transparent; cursor: pointer; transition: all 0.2s; border-radius: 0 1rem 1rem 0; }
+.bulletItem h3 { font-size: 1.4rem; color: var(--text-main); margin-bottom: 0.5rem; }
+.bulletItem p { color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; display: none; }
+.activeBullet { background: var(--bg-card); border-left-color: var(--accent-primary); transform: translateX(10px); }
+.activeBullet p { display: block; margin-top: 0.8rem; }
+.interactiveImageWrapper { flex: 1; height: 400px; border-radius: 1.5rem; overflow: hidden; }
+.interactiveImage { width: 100%; height: 100%; object-fit: cover; }
+
+/* Team */
+.teamSection { padding: 6rem 5%; background: var(--bg-main); text-align: center; }
+.teamTitleWrapper { display: flex; justify-content: center; gap: 1rem; margin-bottom: 4rem; overflow: hidden; }
+.teamTitleLeft { font-size: 3rem; font-weight: 900; color: var(--text-main); opacity: 0; transform: translateX(-100px); transition: all 1s ease-out; }
+.teamTitleRight { font-size: 3rem; font-weight: 900; color: var(--accent-primary); opacity: 0; transform: translateX(100px); transition: all 1s ease-out; }
+.slideLeft { opacity: 1; transform: translateX(0); }
+.slideRight { opacity: 1; transform: translateX(0); }
+.teamGrid { display: flex; flex-wrap: wrap; justify-content: center; gap: 3rem; max-width: 1200px; margin: 0 auto; }
+.teamMember { text-align: center; width: 180px; }
+.teamImageWrapper { width: 150px; height: 150px; border-radius: 50%; overflow: hidden; margin: 0 auto 1rem; border: 3px solid var(--accent-primary); }
+.teamImage { width: 100%; height: 100%; object-fit: cover; }
+.teamMember h3 { font-size: 1.2rem; color: var(--text-main); margin-bottom: 0.2rem; }
+.teamMember p { color: var(--accent-primary); font-size: 0.9rem; font-weight: 600; }
+
+/* Partners */
+.partnersSection { padding: 5rem 5%; text-align: center; background: var(--bg-main); }
+.partnersHeader h2 { font-size: 2.2rem; color: var(--text-main); margin-bottom: 0.5rem; }
+.partnersHeader p { color: var(--text-muted); margin-bottom: 3rem; }
+.partnersGrid { display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; }
+.partnerCard { 
+  background: var(--bg-card); border: 1px solid var(--border-light); padding: 1.5rem; border-radius: 1rem; 
+  width: 200px; height: 90px; display: flex; align-items: center; justify-content: center; transition: all 0.3s; 
+}
+.partnerCard:hover { background: var(--accent-primary); border-color: var(--accent-primary); transform: translateY(-5px); }
+.partnerLogo { max-width: 100%; max-height: 100%; object-fit: contain; transition: all 0.3s; }
+.partnerCard:hover .partnerLogo { filter: brightness(0) invert(1); }
+.fallbackText { display: none; color: var(--text-main); font-weight: 700; font-size: 1.1rem; }
+.partnerCard:hover .fallbackText { color: white; }
+
+/* ==================== الفوتر (عمودي - تحت بعض) ==================== */
+.footer { 
+  background: #e2e8f0; /* لون رمادي أغمق من الخلفية بدرجة */
+  border-top: 4px solid var(--accent-primary); /* بوردر بلون الثيم */
+  display: flex; 
+  flex-direction: column; 
+  margin-top: 3rem; 
+}
+
+/* هنا السر: خليت العناصر تحت بعض وفي المنتصف */
+.footerMain {
+  display: flex;
+  flex-direction: column; /* فوق بعض */
+  justify-content: center; /* في المنتصف عمودياً */
+  align-items: center; /* في المنتصف أفقياً */
+  padding: 4rem 5%;
+  gap: 2rem; /* مسافة بين كل عنصر */
+  text-align: center;
+}
+
+/* اللوجو */
+.footerLogo { 
+  font-size: 3.5rem; 
+  font-weight: 900; 
+  color: #0f172a; 
+}
+
+/* الوصف */
+.footerTagline { 
+  font-size: 1.1rem; 
+  font-weight: 600; 
+  max-width: 600px; 
+  color: #1e293b; 
+  line-height: 1.6;
+}
+
+/* الروابط والسوشيال (تحت بعض) */
+.footerRight { 
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
+  gap: 1.5rem; 
+}
+
+.footerLinks { 
+  display: flex; 
+  gap: 1rem; 
+  font-size: 0.95rem; 
+  font-weight: 600; 
+  color: #475569; 
+  align-items: center;
+  flex-wrap: wrap; /* عشان لو الشاشة صغيرة ينزلوا تحت بعض */
+  justify-content: center;
+}
+.footerLinks a { 
+  color: #475569; 
+  text-decoration: none; 
+  transition: color 0.2s; 
+}
+.footerLinks a:hover { 
+  color: var(--accent-primary); 
+}
+.divider { color: #94a3b8; }
+
+.footerSocials { 
+  display: flex; 
+  gap: 0.8rem; 
+}
+
+/* أزرار السوشيال المربعة */
+.socialBtn { 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  width: 40px; 
+  height: 40px; 
+  border-radius: 8px; 
+  color: white; 
+  text-decoration: none; 
+  transition: transform 0.2s;
+}
+.socialBtn:hover { transform: translateY(-3px); }
+
+/* ألوان السوشيال ميديا */
+.linkedin { background: #0077b5; }
+.x { background: #000000; }
+.facebook { background: #1877f2; }
+.instagram { background: #e1306c; }
+.whatsapp { background: #25d366; }
+.socialDefault { background: #475569; }
+
+/* الشريط الأسود السفلي */
+.footerBottom { 
+  background: #000000; 
+  padding: 1.5rem; 
+  text-align: center; 
+  color: white; 
+  font-size: 0.95rem; 
+  font-weight: 500;
+}
+
+/* الوضع الليلي للفوتر */
+[data-theme="dark"] .footer { 
+  background: var(--bg-card); 
+}
+[data-theme="dark"] .footerLogo { color: white; }
+[data-theme="dark"] .footerTagline { color: var(--text-muted); }
+[data-theme="dark"] .footerLinks a { color: var(--text-muted); }
+[data-theme="dark"] .footerLinks a:hover { color: var(--accent-primary); }
+[data-theme="dark"] .divider { color: #475569; }
+[data-theme="dark"] .footerBottom { background: #000; color: var(--text-muted); }
+
+/* Responsive */
+@media (max-width: 900px) {
+  .heroText h1 { font-size: 2.5rem; }
+  .cubesGrid { grid-template-columns: 1fr; }
+  .interactiveContainer { flex-direction: column; }
+  .statsGrid { grid-template-columns: 1fr 1fr; }
+  .storyCard { width: 100%; max-width: 320px; }
+}
